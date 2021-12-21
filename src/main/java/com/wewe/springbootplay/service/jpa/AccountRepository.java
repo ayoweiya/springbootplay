@@ -1,4 +1,4 @@
-package com.wewe.springbootplay.service;
+package com.wewe.springbootplay.service.jpa;
 
 import com.wewe.springbootplay.module.Account;
 import com.wewe.springbootplay.module.Customer;
