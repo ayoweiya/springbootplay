@@ -4,6 +4,8 @@ import com.wewe.springbootplay.module.Account;
 import com.wewe.springbootplay.module.Customer;
 import com.wewe.springbootplay.module.Employee;
 import com.wewe.springbootplay.module.Gender;
+import com.wewe.springbootplay.service.iml.AccountServiceImpl;
+import com.wewe.springbootplay.service.iml.MyServiceImpl;
 import com.wewe.springbootplay.service.jpa.AccountRepository;
 import com.wewe.springbootplay.service.jpa.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +24,12 @@ public class DemoController {
     @Autowired
     AccountRepository accountRepository;
 
+    @Autowired
+    MyServiceImpl myService;
+
+
     @RequestMapping("/temp")
-    public String index(Model model){
+    public String index(Model model)  {
         Employee e1 = new Employee();
         e1.setFirstName("Tomcat");
         e1.setLastName("Foster");
@@ -41,9 +47,13 @@ public class DemoController {
         for(Account account1:accList){
             System.out.println("-----" + account1.getCustomer());
         }
-
         return "temp";
     }
 
+    @RequestMapping("/ttt")
+    public String ttt(Model model)throws Exception {
+        myService.rrrr();
+        return "temp";
+    }
 
 }
